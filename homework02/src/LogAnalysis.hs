@@ -1,11 +1,15 @@
+{-# OPTIONS_GHC -Wall #-}
+
 ----------------------------------------------------------------------
 -- |
 --
--- CIS 194 Spring 2013: Homework 01
+-- CIS 194 Spring 2013: Homework 02
 --
 ----------------------------------------------------------------------
 
-module Basis where
+module LogAnalysis where
+
+import Log
 
 ----------------------------------------------------------------------
 -- Exercise 1
@@ -13,15 +17,18 @@ module Basis where
 
 -- |
 --
--- >>> toDigits 1234
--- [1,2,3,4]
--- >>> toDigits 0
--- []
--- >>> toDigits (-17)
--- []
+-- >>> parseMessage "E 2 562 help help"
+-- LogMessage (Error 2) 562 "help help"
+-- >>> parseMessage "I 29 la la la"
+-- LogMessage Info 29 "la la la"
+-- >>> parseMessage "This is not in the right format"
+-- Unknown "This is not in the right format"
 
-toDigits :: Integer -> [Integer]
-toDigits = undefined
+parseMessage :: String -> LogMessage
+parseMessage = undefined
+
+parse :: String -> [LogMessage]
+parse = undefined
 
 ----------------------------------------------------------------------
 -- Exercise 2
@@ -29,13 +36,11 @@ toDigits = undefined
 
 -- |
 --
--- >>> doubleEveryOther [8,7,6,5]
--- [16,7,12,5]
--- >>> doubleEveryOther [1,2,3]
--- [1,4,3]
+-- >>>
+--
 
-doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther = undefined
+insert :: LogMessage -> MessageTree -> MessageTree
+insert = undefined
 
 ----------------------------------------------------------------------
 -- Exercise 3
@@ -43,11 +48,11 @@ doubleEveryOther = undefined
 
 -- |
 --
--- >>> sumDigits [16,7,12,5]
--- 22
+-- >>>
+--
 
-sumDigits :: [Integer] -> Integer
-sumDigits = undefined
+build :: [LogMessage] -> MessageTree
+build = undefined
 
 ----------------------------------------------------------------------
 -- Exercise 4
@@ -55,32 +60,27 @@ sumDigits = undefined
 
 -- |
 --
--- >>> validate 4012888888881881
--- True
--- >>> validate 4012888888881882
--- False
+-- >>>
+--
 
-validate :: Integer -> Bool
-validate = undefined
+inOrder :: MessageTree -> [LogMessage]
+inOrder = undefined
 
 ----------------------------------------------------------------------
 -- Exercise 5
 ----------------------------------------------------------------------
 
-type Peg = String
-type Move = (Peg, Peg)
-
 -- |
 --
--- >>> hanoi 2 "a" "b" "c"
--- [("a","c"), ("a","b"), ("c","b")]
+-- >>>
+--
 
-hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi = undefined
+whatWentWrong :: [LogMessage] -> [String]
+whatWentWrong = undefined
 
 ----------------------------------------------------------------------
 -- Exercise 6 (Optional)
 ----------------------------------------------------------------------
 
-hanoi' :: Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
-hanoi' = undefined
+whoDidIt :: String
+whoDidIt = undefined
