@@ -1,0 +1,35 @@
+name: wholemeal
+version: 0.1.0
+build-type: Simple
+cabal-version: >= 1.10
+
+
+library
+  hs-source-dirs: src
+  exposed-modules: Wholemeal
+  build-depends: base >= 4.7 && < 5
+  ghc-options: -Wall
+  default-language: Haskell2010
+
+
+test-suite examples
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test/examples
+  main-is: Main.hs
+  ghc-options: -Wall -threaded
+  build-depends:
+      base
+    , wholemeal
+    , doctest >= 0.10
+  default-language: Haskell2010
+
+
+test-suite suggestions
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test/suggestions
+  main-is: Main.hs
+  ghc-options: -Wall -threaded
+  build-depends:
+      base
+    , hlint >= 1.9
+  default-language: Haskell2010
