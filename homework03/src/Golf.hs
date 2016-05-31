@@ -38,7 +38,7 @@ skips = undefined
 -- >>> localMaxima [2,3,4,1,5]
 -- [4]
 -- >>> localMaxima [1,2,3,4,5]
--- [1]
+-- []
 
 localMaxima :: [Integer] -> [Integer]
 localMaxima = undefined
