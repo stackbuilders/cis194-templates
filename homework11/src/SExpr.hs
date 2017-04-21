@@ -74,13 +74,13 @@ type Ident =
 data Atom
   = N Integer
   | I Ident
-  deriving Show
+  deriving (Show, Eq)
 
 
 data SExpr
   = A Atom
   | Comb [SExpr]
-  deriving Show
+  deriving (Show, Eq)
 
 
 -- |
