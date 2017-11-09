@@ -21,7 +21,9 @@ module Basis where
 -- []
 
 toDigits :: Integer -> [Integer]
-toDigits = undefined
+toDigits n 
+  | n > 0     = toDigits (div n 10) ++ [mod n 10]
+  | otherwise = [] 
 
 ----------------------------------------------------------------------
 -- Exercise 2
@@ -35,7 +37,7 @@ toDigits = undefined
 -- [1,4,3]
 
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther = undefined
+doubleEveryOther = reverse . zipWith (*) (cycle [1,2]) . reverse
 
 ----------------------------------------------------------------------
 -- Exercise 3
@@ -47,7 +49,7 @@ doubleEveryOther = undefined
 -- 22
 
 sumDigits :: [Integer] -> Integer
-sumDigits = undefined
+sumDigits = foldl (\acc n -> acc + sum (toDigits n)) 0
 
 ----------------------------------------------------------------------
 -- Exercise 4
@@ -61,7 +63,7 @@ sumDigits = undefined
 -- False
 
 validate :: Integer -> Bool
-validate = undefined
+validate number = mod (sumDigits $ doubleEveryOther $ toDigits number) 10 == 0
 
 ----------------------------------------------------------------------
 -- Exercise 5
@@ -76,11 +78,12 @@ type Move = (Peg, Peg)
 -- [("a","c"),("a","b"),("c","b")]
 
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi = undefined
+hanoi 0 _ _ _ = []
+hanoi n a b c = hanoi (n-1) a c b ++ [(a,b)] ++ hanoi (n-1) c b a
 
 ----------------------------------------------------------------------
 -- Exercise 6 (Optional)
 ----------------------------------------------------------------------
 
 hanoi' :: Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
-hanoi' = undefined
+hanoi' = undefined -- Work still in progress!
