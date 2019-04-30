@@ -1,0 +1,69 @@
+name:                cis194-templates
+version:             0.1.0.0
+github:              "stackbuilders/cis194-templates"
+license:             MIT
+license-file:        LICENSE
+author:              "Stack Builders"
+maintainer:          "info@stackbuilders.com"
+copyright:           "2016-2019 Stack Builders Inc."
+
+extra-source-files:
+  - LICENSE
+  - README.md
+
+description:         Please see the README on GitHub at <https://github.com/stackbuilders/cis194-templates#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+    - MonadRandom
+    - containers
+    - mtl
+
+executables:
+
+  homework07:
+    main:                Main.hs
+    source-dirs:         app/Homework07
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - cis194-templates
+
+tests:
+  doctest:
+    main:                Main.hs
+    source-dirs:         test/doctest
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - doctest
+
+  hlint:
+    main:                Main.hs
+    source-dirs:         test/hlint
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hlint
+
+  hspec:
+    main:                Main.hs
+    source-dirs:         test/hspec
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - cis194-templates
+      - hspec
+
