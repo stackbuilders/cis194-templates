@@ -1,0 +1,15 @@
+---
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: debian:9.8
+
+    steps:
+      - checkout
+      - run: apt update
+      - run: apt install -y curl libssl-dev libtinfo-dev
+      - run: curl -sSL https://get.haskellstack.org/ | sh
+      - run: stack setup
+      - run: stack build --only-dependencies --test
+      - run: stack build --test --no-run-tests

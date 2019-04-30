@@ -1,0 +1,114 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0e08e1247e98a7321ee9541698b60994b33b165e2a8892ce939f461c0bc9e667
+
+name:           cis194-templates
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/stackbuilders/cis194-templates#readme>
+homepage:       https://github.com/stackbuilders/cis194-templates#readme
+bug-reports:    https://github.com/stackbuilders/cis194-templates/issues
+author:         Stack Builders
+maintainer:     haskell@stackbuilders.com
+copyright:      2016-2019 Stack Builders Inc.
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    LICENSE
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/stackbuilders/cis194-templates
+
+library
+  exposed-modules:
+      Homework01.Basis
+      Homework02.Log
+      Homework02.LogAnalysis
+      Homework03.Golf
+      Homework04.Wholemeal
+      Homework05.Calc
+      Homework05.ExprT
+      Homework05.Parser
+      Homework05.StackVM
+      Homework06.Fibonacci
+      Homework07.Buffer
+      Homework07.Editor
+      Homework07.JoinList
+      Homework07.Scrabble
+      Homework07.Sized
+      Homework07.StringBuffer
+      Homework08.Employee
+      Homework08.Party
+      Homework10.AParser
+      Homework11.AParser
+      Homework11.SExpr
+      Homework12.Risk
+  other-modules:
+      Paths_cis194_templates
+  hs-source-dirs:
+      src
+  build-depends:
+      MonadRandom
+    , base >=4.7 && <5
+    , containers
+    , mtl
+  default-language: Haskell2010
+
+executable homework07
+  main-is: Main.hs
+  other-modules:
+      Paths_cis194_templates
+  hs-source-dirs:
+      app/Homework07
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , cis194-templates
+  default-language: Haskell2010
+
+test-suite doctest
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_cis194_templates
+  hs-source-dirs:
+      test/doctest
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , doctest
+  default-language: Haskell2010
+
+test-suite hlint
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_cis194_templates
+  hs-source-dirs:
+      test/hlint
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hlint
+  default-language: Haskell2010
+
+test-suite hspec
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Homework01.BasisSpec
+      Paths_cis194_templates
+  hs-source-dirs:
+      test/hspec
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , cis194-templates
+    , hspec
+  default-language: Haskell2010
