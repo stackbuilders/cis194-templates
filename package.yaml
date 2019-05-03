@@ -4,7 +4,7 @@ github:              "stackbuilders/cis194-templates"
 license:             MIT
 license-file:        LICENSE
 author:              "Stack Builders"
-maintainer:          "info@stackbuilders.com"
+maintainer:          "haskellers@stackbuilders.com"
 copyright:           "2016-2019 Stack Builders Inc."
 
 extra-source-files:
@@ -66,4 +66,3 @@ tests:
     dependencies:
       - cis194-templates
       - hspec
-
