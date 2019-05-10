@@ -27,6 +27,20 @@ Run the tests:
 stack test
 ```
 
+### Developing with nix-shell
+
+Install [nix](https://nixos.org/nix) package manager:
+
+```
+sh <(curl https://nixos.org/nix/install)
+```
+
+Spawn a new shell with all the dependencies defined at [shell.nix](shell.nix):
+
+```
+nix-shell
+```
+
 ## Tips & Tricks
 
 Run linter:
