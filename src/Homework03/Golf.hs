@@ -49,8 +49,19 @@ localMaxima = undefined
 
 -- |
 --
--- >>> histogram [1,1,1,5]
--- " *        \n *        \n *   *    \n==========\n0123456789\n"
+-- >>> putStr (histogram [1,1,1,5])
+--  *
+--  *
+--  *   *
+-- ==========
+-- 0123456789
+-- >>> putStr (histogram [1,4,5,4,6,6,3,4,2,4,9])
+--     *
+--     *
+--     * *
+--  ******  *
+-- ==========
+-- 0123456789
 
 histogram :: [Integer] -> String
 histogram = undefined
