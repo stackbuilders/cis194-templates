@@ -60,9 +60,11 @@ tests:
     main:                Main.hs
     source-dirs:         test/hspec
     ghc-options:
+      - -Wall
       - -threaded
       - -rtsopts
       - -with-rtsopts=-N
     dependencies:
+      - QuickCheck
       - cis194-templates
       - hspec
